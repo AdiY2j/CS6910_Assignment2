@@ -14,6 +14,12 @@ from torchvision.datasets import ImageFolder
 from torch.utils.data import DataLoader, ConcatDataset, Subset
 from tqdm.notebook import tqdm
 
+def list_type(arg):
+    try:
+        return [int(x) for x in arg.split(',')]
+    except ValueError:
+        raise argparse.ArgumentTypeError("Invalid list format. Must be comma-separated integers.")
+
 parser = argparse.ArgumentParser()
 parser.add_argument('-wp', '--wandb_project', default="DL_Assignment_2", required=False, metavar="", type=str, help='Project name used to track experiments in Weights & Biases dashboard')
 parser.add_argument('-we', '--wandb_entity', default="cs23m009", required=False, metavar="", type=str, help='Wandb Entity used to track experiments in the Weights & Biases dashboard')
@@ -24,7 +30,7 @@ parser.add_argument('-bn', '--batch_norm', default=True, required=False, metavar
 parser.add_argument('-da', '--data_aug', default=False, required=False, metavar="", type=bool, choices= ["True", "False"], help='Perform Data Augmentation')
 parser.add_argument('-lr', '--learning_rate', default=0.0001, required=False, metavar="", type=float, help='Learning rate used to optimize model parameters')
 parser.add_argument('-dp', '--dropout', default=0.2,  required=False, metavar="", type=float, help='Dropout Value')
-parser.add_argument('-fs', '--filter_size', default=[2, 2, 2, 2, 2],  required=False, metavar="", type=list, help='Filter Size for 5 layers : [3, 3, 3, 3, 3], [2, 2, 2, 2, 2]')
+parser.add_argument('-fs', '--filter_size', default='2, 2, 2, 2, 2',  required=False, metavar="", type=list_type, help='Filter Size for 5 layers : [3, 3, 3, 3, 3], [2, 2, 2, 2, 2]')
 parser.add_argument('-fo', '--filter_org', default="same", required=False, metavar="", type=str, choices=["same", "double", "half"], help='Filter Organization choices: ["same", "double", "half"]')
 parser.add_argument('-a', '--activation', default="ReLU", required=False, metavar="", type=str, choices=['Mish', 'GELU', 'ReLU', 'SiLU'], help="Activation Function choices: ['Mish', 'GELU', 'ReLU', 'SiLU']")
 args = parser.parse_args()
