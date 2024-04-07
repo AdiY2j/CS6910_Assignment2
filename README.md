@@ -65,3 +65,13 @@ c] Freezing upto k layers
 From the above techniques, I have implemented Fine-tuning by freezing all the layers except the final layer for ResNet model and obtained validation accuracy of  82.29 % and test accuracy of 80.1 %.
 
 
+## Wandb Report
+
+Report Link : https://wandb.ai/cs23m009/DL_Assignment_2/reports/CS6910-Assignment-2--Vmlldzo3NDMzNzAz
+
+## Requirements
+
+Install numpy, pandas, pytorch and wandb before execution or use jupyter notebook/colab to directly visualize.
+
+
+
