@@ -55,6 +55,6 @@ python train_parta.py
 | `-da, --data_aug`      | `DATA_AUG`     | Whether to perform Data Augmentation or not.                                           | True, False      | False         |
 | `-lr, --learning_rate` | `LEARNING_RATE`| Learning rate used to optimize model parameters.                                       | Any float        | 0.0001        |
 | `-dp, --dropout`       | `DROPOUT`      | Dropout value.                                                                         | Any float        | 0.2           |
-| `-fs, --filter_size`   | `FILTER_SIZE`  | Filter size for 5 layers.                                                              | [2, 2, 2, 2, 2], [3, 3, 3, 3, 3] | [2, 2, 2, 2, 2] |
+| `-fs, --filter_size`   | `FILTER_SIZE`  | Filter size for 5 layers.                                                              | [2, 2, 2, 2, 2], [3, 3, 3, 3, 3] | '2, 2, 2, 2, 2' |
 | `-fo, --filter_org`    | `FILTER_ORG`   | Filter organization choices.                                                           | "same", "double", "half" | "same" |
 | `-a, --activation`     | `ACTIVATION`   | Activation function choices.                                                            | "Mish", "GELU", "ReLU", "SiLU" | "ReLU" |
