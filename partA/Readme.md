@@ -31,7 +31,7 @@
 I designed a python script (train.py) to train above CNN with different parameters. Inorder to execute it just run below command :
 
 ```
-python train_parta.py --wandb_project "myprojectname" --wandb_entity "myname" --epoch 5 --batch_size 32  --learning_rate 0.0001 --activation "GELU" --batch_norm True --data_aug False --dropout 0.2 --filter_org "same" --filter_size [2, 2, 2, 2, 2]
+python train_parta.py --wandb_project "myprojectname" --wandb_entity "myname" --epoch 5 --batch_size 32  --learning_rate 0.0001 --activation "GELU" --batch_norm True --data_aug False --dropout 0.2 --filter_org "same" --filter_size '2, 2, 2, 2, 2'
 ```
 
 OR
